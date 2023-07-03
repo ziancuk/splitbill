@@ -41,7 +41,7 @@
                     <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <span class="py-4 text-blue-400/100 text-sm font-semibold cursor-pointer hover:text-blue-900" @click="addPemilik">+ Tambah Pemilik Bill</span>
                         <div class="sm:col-span-6">
-                            <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Tax / Pajak</label>
+                            <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Tax / Pajak (dalam persen %)</label>
                             <div class="mt-2">
                                 <input type="text" name="tax" id="tax" autocomplete="tax" class="block border shadow rounded w-full bg-transparent py-2 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Masukkan Tax" v-model="tax" required>
                             </div>
@@ -122,7 +122,7 @@ export default{
             window.location.reload();
         },
         submitForm(){
-            localStorage.setItem("tax", this.tax / this.dataForm.length)
+            localStorage.setItem("tax", this.tax)
             localStorage.setItem("apiData", JSON.stringify(this.dataForm))
             this.$router.push('/bill')
             // console.log(this.dataForm)

@@ -75,7 +75,7 @@
                             Tax
                             </th>
                             <td class="pt-4 pl-3 pr-4 text-sm text-right text-slate-500 sm:pr-6 md:pr-0">
-                             {{ rupiah(tax)}}
+                             {{ rupiah(getTotal(item.item) * tax / 100)}}
                             </td>
                         </tr>
                         <tr>
@@ -86,7 +86,7 @@
                             Total
                             </th>
                             <td class="pt-4 pl-3 pr-4 text-sm font-normal text-right text-slate-700 sm:pr-6 md:pr-0">
-                            {{ rupiah(getTotal(item.item) + tax)}}
+                            {{ rupiah(getTotal(item.item) + getTotal(item.item) * tax / 100)}}
                             </td>
                         </tr>
                     </tfoot>
